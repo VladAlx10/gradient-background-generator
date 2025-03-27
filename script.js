@@ -14,6 +14,14 @@ function setGradient() {
 	 css.textContent = body.style.background + ";";
 }
 
+function copyToClipboard() {
+	navigator.clipboard.writeText(css.textContent)
+		.then(() => alert("CSS code copied to clipboard!"))
+		.catch(err => console.error("Error copying text: ", err));
+}
+
 color1.addEventListener("input", setGradient);
 
 color2.addEventListener("input", setGradient);
+
+setGradient();
